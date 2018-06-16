@@ -10,7 +10,7 @@ signalRouter.route('/')
 
 signalRouter.route('/:id')
   .get(signalController.getSpecificSignal)
-  .delete()
+  .delete(signalController.deleteSpecificSignal)
   .patch()
   .post();
 
