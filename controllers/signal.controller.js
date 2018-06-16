@@ -28,9 +28,17 @@ export default {
   // Retreive a specific signal from the database, send it to frontend
   getSpecificSignal: (req, res) => {
     const signalID = req.params.id;
-    console.log(signalID);
     Signal.findById(signalID)
       .then(retreivedSignal => res.status(201).json(retreivedSignal))
       .catch(err => res.status(504).json(err));
   },
+
+  // Delete a specific signal, given its ID
+  deleteSpecificSignal: (req, res) => {
+    const signalID = req.params.id;
+    Signal.findByIdAndRemove(signalID)
+      .then(deletedSignal => res.status(201).json(deletedSignal))
+      .catch(err => res.status(500).json(err));
+  },
+
 };
