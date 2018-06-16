@@ -8,4 +8,10 @@ signalRouter.route('/')
   .post(signalController.newSignal)
   .delete(signalController.deleteAllSignals);
 
+signalRouter.route('/:id')
+  .get(signalController.getSpecificSignal)
+  .delete()
+  .patch()
+  .post();
+
 export default signalRouter;
