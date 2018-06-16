@@ -1,0 +1,39 @@
+{
+  "name": "signals-server",
+  "version": "1.0.0",
+  "description": "A simple rest api service with MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint --env node --ignore-path .gitignore --fix .",
+    "build": "babel server.js -d dist",
+    "dev": "nodemon server.js --exec babel-node",
+    "serve": "node dist/server.js"
+  },
+  "author": "Alberto Zanotti",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.5",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.17.5"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "no-console": 0
+    }
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
