@@ -4,9 +4,9 @@
   "description": "A simple rest api service with MongoDB",
   "main": "server.js",
   "scripts": {
-    "lint": "eslint --env node --ignore-path .gitignore --fix .",
-    "build": "babel server.js -d dist",
-    "dev": "nodemon server.js --exec babel-node",
+    "lint": "eslint --env node --ignore-path .gitignore --fix src",
+    "build": "babel src -d dist",
+    "dev": "nodemon src/server.js --exec babel-node",
     "serve": "node dist/server.js"
   },
   "author": "Alberto Zanotti",
