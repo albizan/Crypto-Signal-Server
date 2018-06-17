@@ -11,7 +11,6 @@ signalRouter.route('/')
 signalRouter.route('/:id')
   .get(signalController.getSpecificSignal)
   .delete(signalController.deleteSpecificSignal)
-  .put(signalController.updateSpecificSignal)
-  .patch();
+  .put(signalController.updateSpecificSignal);
 
 export default signalRouter;
