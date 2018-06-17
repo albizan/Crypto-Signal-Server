@@ -41,4 +41,12 @@ export default {
       .catch(err => res.status(500).json(err));
   },
 
+  // Update a specific signal, give its ID and a payload
+  updateSpecificSignal: (req, res) => {
+    const signalID = req.params.id;
+    Signal.findByIdAndUpdate(signalID, req.body, { new: true })
+      .then(updatedSignal => res.status(201).json(updatedSignal))
+      .catch(err => res.status(500).json(err));
+  },
+
 };
