@@ -8,4 +8,9 @@ gemRouter.route('/')
   .post(gemController.newGem)
   .delete(gemController.deleteAllGems);
 
+gemRouter.route('/:id')
+  .get(gemController.getSpecificGem)
+  .delete(gemController.deleteSpecificGem)
+  .put(gemController.updateSpecificGem);
+
 export default gemRouter;
