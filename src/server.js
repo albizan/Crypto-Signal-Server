@@ -8,6 +8,7 @@ import cors from 'cors';
 import configData from './config';
 import signalRouter from './routes/signals.routes';
 import gemRouter from './routes/gems.routes';
+import scamRouter from './routes/scams.routes';
 
 const app = express();
 const logger = morgan('dev');
@@ -22,5 +23,6 @@ app.use(cors());
 app.use(logger);
 app.use('/api/signals', signalRouter);
 app.use('/api/gems', gemRouter);
+app.use('/api/scams', scamRouter);
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
