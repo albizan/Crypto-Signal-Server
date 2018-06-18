@@ -25,4 +25,28 @@ export default {
       .catch(err => res.status(500).json(err));
   },
 
+  // Retreive a specific Gem from the database, send it to frontend
+  getSpecificGem: (req, res) => {
+    const gemID = req.params.id;
+    Gem.findById(gemID)
+      .then(retreivedGem => res.status(201).json(retreivedGem))
+      .catch(err => res.status(504).json(err));
+  },
+
+  // Delete a specific Gem, given its ID
+  deleteSpecificGem: (req, res) => {
+    const gemID = req.params.id;
+    Gem.findByIdAndRemove(gemID)
+      .then(deletedGem => res.status(201).json(deletedGem))
+      .catch(err => res.status(500).json(err));
+  },
+
+  // Update a specific Gem, give its ID and a payload
+  updateSpecificGem: (req, res) => {
+    const gemID = req.params.id;
+    Gem.findByIdAndUpdate(gemID, req.body, { new: true }) // {new:true} -> updated gem in .then
+      .then(updatedGem => res.status(201).json(updatedGem))
+      .catch(err => res.status(500).json(err));
+  },
+
 };
